@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:02:59 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 13:55:29 by alcierra         ###   ########.fr       */
+/*   Created: 2021/10/05 16:55:02 by alcierra          #+#    #+#             */
+/*   Updated: 2021/10/05 16:59:01 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+char	*strrchr(const char *s, int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	char	*ptr;
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			ptr = s + i;
+		i++;
+	}
+	return (ptr);
 }
