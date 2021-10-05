@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:00:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 19:03:58 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/05 20:37:27 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <errno.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -37,4 +38,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+
 #endif
