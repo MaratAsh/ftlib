@@ -24,7 +24,7 @@ fclean: clean
 		rm -rf ${NAME}
 
 %.o : %.c
-		gcc ${FLAGS} -c %< -o %@
+		gcc ${FLAGS} -c $< -o $@
 
 re: fclean all
 
