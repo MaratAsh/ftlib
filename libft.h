@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:00:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 20:37:27 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/05 21:02:51 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <string.h>
 # include <errno.h>
 
 int		ft_isalpha(int c);

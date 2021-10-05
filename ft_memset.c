@@ -6,19 +6,16 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:21:06 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:28:17 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/05 21:13:19 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int	i;
-
-	i = 0;
-	while (i < len)
+	while (len)
 	{
-		b[i] = c;
-		i++;
+		b[len] = c;
+		len--;
 	}
 	return (b);
 }
