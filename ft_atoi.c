@@ -6,33 +6,48 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:31:12 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 19:39:41 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 16:03:24 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+static int	ft_skip(char *str, int *flg)
+{
+	int	i;
+
+	i = 0;
+	*flg = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\v')
+		i++;
+	if (str[i] == '-')
+	{
+		i++;
+		*flg = 1;
+	}
+	else if (str[i] == '+')
+		i++;
+	return (i);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	flg;
+	long long	res;
+	long long	nxt_res;
+	int			flg;
 
-	flg = 0;
+	str += ft_skip((char *) str, &flg);
 	res = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f')
-		str++;
-	if (*str == '-')
-	{
-		str++;
-		flg = 1;
-	}
-	else if (*str == '+')
-		str++;
+	nxt_res = 0;
 	while (*str >= '0' && *str <= '9')
 	{
 		if (flg)
-			res = res * 10 - (*str - '0');
+			nxt_res = res * 10 - (*str - '0');
 		else
-			res = res * 10 + (*str - '0');
+			nxt_res = res * 10 + (*str - '0');
+		if ((flg && nxt_res >= res) || (flg == 0 && nxt_res <= res))
+			return (-1);
+		res = nxt_res;
 		str++;
 	}
-	return (res);
+	return ((int) res);
 }

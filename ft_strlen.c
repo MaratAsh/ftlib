@@ -6,13 +6,15 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:14:04 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 21:06:18 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:05:08 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(char *s)
+typedef unsigned long	t_size;
+
+t_size	ft_strlen(char *s)
 {
-	size_t	sz;
+	t_size	sz;
 
 	sz = 0;
 	while (s[sz])

@@ -6,20 +6,22 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:04:22 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 16:35:30 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:17:50 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t sz)
+typedef unsigned long	t_size;
+
+t_size	ft_strlcpy(char *dst, const char *src, t_size sz)
 {
-	int	i;
+	t_size	i;
 
 	i = 0;
-	while (src[i])
+	while (src[i] && i < sz)
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = 0;
-	return ((size_t) i);
+	return (i);
 }

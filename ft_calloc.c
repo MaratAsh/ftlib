@@ -6,11 +6,15 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:28:28 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 14:52:30 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:55:05 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_calloc(size_t count, size_t size)
+#include <stdlib.h>
+
+typedef unsigned long	t_size;
+
+void	*ft_calloc(t_size count, t_size size)
 {
-	return (malloc(count * size));
+	return ((void *) malloc(count * size));
 }

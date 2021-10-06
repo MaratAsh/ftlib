@@ -6,19 +6,23 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:16:27 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 17:38:36 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 17:11:23 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const char *s, int c, size_t n)
+typedef unsigned long	t_size;
+
+void	*ft_memchr(const char *s, int c, t_size n)
 {
-	int	i;
+	t_size	i;
 
 	i = 0;
-	while (s[i])
+	if ((unsigned char) c == 0 && s[n - 1] == '\0')
+		return ((char *) s + n - 1);
+	while (i < n)
 	{
 		if (s[i] == c)
-			return (s + i);
+			return ((char *) s + i);
 		i++;
 	}
 	return ((void *) 0);

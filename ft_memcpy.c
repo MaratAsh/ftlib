@@ -6,18 +6,24 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:45:20 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 16:54:09 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 16:22:00 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
-{
-	size_t	i;
+typedef unsigned long	t_size;
 
+void	*ft_memcpy(void *dst, const void *src, t_size n)
+{
+	t_size	i;
+	char	*temp_dst;
+
+	if (dst == (void *) 0 && src == (void *) 0)
+		return (dst);
+	temp_dst = (char *) dst;
 	i = 0;
 	while (i < n)
 	{
-		dst[i] = src[i];
+		temp_dst[i] = ((char *) src)[i];
 		i++;
 	}
 	return (dst);

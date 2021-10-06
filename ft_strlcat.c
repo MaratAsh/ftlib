@@ -6,24 +6,26 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:24:05 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 16:35:10 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:18:25 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t sz)
+typedef unsigned long	t_size;
+
+t_size	ft_strlcat(char *dst, const char *src, t_size sz)
 {
-	int	sz_dst;
-	int	i;
+	t_size	sz_dst;
+	t_size	i;
 
 	i = 0;
 	sz_dst = 0;
 	while (dst[sz_dst])
 		sz_dst++;
-	while (src[i])
+	while (src[i] && i < sz)
 	{
 		dst[sz_dst + i] = src[i];
 		i++;
 	}
 	dst[sz_dst + i] = 0;
-	return ((size_t) sz_dst + i);
+	return (sz_dst + i);
 }

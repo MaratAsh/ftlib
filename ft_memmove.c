@@ -6,34 +6,32 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:53:27 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 16:54:37 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 18:13:18 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
-{
-	void		*temp_dst;
-	const void	*temp_src;
+typedef unsigned long	t_size;
 
-	temp_dst = dst;
-	temp_src = src;
+void	*ft_memmove(void *dst, const void *src, t_size len)
+{
+	char		*temp_dst;
+	const char	*temp_src;
+
+	temp_dst = (char *) dst;
+	temp_src = (char *) src;
+	 if (dst == (void *) 0 && src == (void *) 0)
+		return (dst);
 	if (dst < src)
 	{
-		while (len)
-		{
+		while (len--)
 			*temp_dst++ = *temp_src++;
-			len--;
-		}
 	}
 	else
 	{
 		temp_dst += len - 1;
 		temp_src += len - 1;
-		while (len)
-		{
+		while (len--)
 			*temp_dst-- = *temp_src--;
-			len--;
-		}
 	}
 	return (dst);
 }

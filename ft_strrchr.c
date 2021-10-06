@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:55:02 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/05 16:59:01 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:22:50 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@ char	*strrchr(const char *s, int c)
 	char	*ptr;
 	int		i;
 
+	ptr = (void *) 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
-			ptr = s + i;
+			ptr = (char *) s + i;
 		i++;
 	}
 	return (ptr);
