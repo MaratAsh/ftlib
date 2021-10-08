@@ -6,13 +6,21 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:56:22 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/08 16:59:22 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/08 22:01:38 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	
+	unsigned long	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, s + i, 1);
+		i++;
+	}
 }
