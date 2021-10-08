@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 18:31:12 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/06 16:03:24 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/08 15:34:51 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 			nxt_res = res * 10 - (*str - '0');
 		else
 			nxt_res = res * 10 + (*str - '0');
-		if ((flg && nxt_res >= res) || (flg == 0 && nxt_res <= res))
+		if ((flg == 1 && nxt_res > 0) || (flg == 0 && nxt_res < 0))
 			return (-1);
 		res = nxt_res;
 		str++;

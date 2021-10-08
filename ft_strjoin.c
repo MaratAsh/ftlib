@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 16:24:05 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/08 15:58:27 by alcierra         ###   ########.fr       */
+/*   Created: 2021/10/08 16:22:04 by alcierra          #+#    #+#             */
+/*   Updated: 2021/10/08 16:37:20 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef unsigned long	t_size;
+#include "libft.h"
 
-t_size	ft_strlcat(char *dst, const char *src, t_size sz)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_size	sz_dst;
-	t_size	i;
+	char	*str;
+	int		len1;
+	int		len2;
 
-	i = 0;
-	sz_dst = 0;
-	while (dst[sz_dst])
-		sz_dst++;
-	while (src[i] && i < sz)
-	{
-		dst[sz_dst + i] = src[i];
-		i++;
-	}
-	if (i == sz && sz != 0)
-		i--;
-	dst[sz_dst + i] = 0;
-	return (sz_dst + i);
+	len1 = ft_strlen((char *) s1);
+	len2 = ft_strlen((char *) s2);
+	str = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
+	if (str == (char *) 0)
+		return (NULL);
+	ft_strlcpy(str, s1, len1);
+	ft_strlcpy(str + len1, s2, len2 + 1);
+	return (str);
 }
