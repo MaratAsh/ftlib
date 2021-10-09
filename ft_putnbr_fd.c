@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:00:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/08 22:23:51 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 13:10:09 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void ft_putnbr_fd(int n, int fd)
 			d--;
 		}
 	}
-	while (curr_d)
+	while (curr_d > 1 || (n > 0))
 	{
 		c = '0' + n / ft_pow(10, curr_d - 1);
 		n = n % ft_pow(10, curr_d - 1);
