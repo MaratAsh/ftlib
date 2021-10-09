@@ -6,9 +6,11 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:24:05 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/08 15:58:27 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 21:49:27 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 typedef unsigned long	t_size;
 
@@ -21,12 +23,14 @@ t_size	ft_strlcat(char *dst, const char *src, t_size sz)
 	sz_dst = 0;
 	while (dst[sz_dst])
 		sz_dst++;
-	while (src[i] && i < sz)
+	if (sz_dst >= sz)
+		return (ft_strlen((char *) src) + sz);
+	while (src[i] && sz_dst + i + 1 < sz)
 	{
 		dst[sz_dst + i] = src[i];
 		i++;
 	}
-	if (i == sz && sz != 0)
+	if (sz_dst + i == sz && sz != 0)
 		i--;
 	dst[sz_dst + i] = 0;
 	return (sz_dst + i);
