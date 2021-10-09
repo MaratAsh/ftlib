@@ -6,15 +6,26 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:28:28 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/06 13:55:05 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:24:36 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 typedef unsigned long	t_size;
 
 void	*ft_calloc(t_size count, t_size size)
 {
-	return ((void *) malloc(count * size));
+	void	*arr;
+
+	if (count < 1 || size < 1)
+	{
+		count = 1;
+		size = 1;
+	}
+	arr = malloc(count * size);
+	if (!arr)
+		return (NULL);
+	ft_bzero(arr, size * count);
+	return (arr);
 }
