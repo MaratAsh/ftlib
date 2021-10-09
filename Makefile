@@ -6,7 +6,7 @@
 #    By: alcierra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2021/10/08 22:25:47 by alcierra         ###   ########.fr        #
+#    Updated: 2021/10/09 19:50:55 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	\
 			ft_strrchr.c	ft_strncmp.c	ft_memchr.c		\
 			ft_memcmp.c		ft_strnstr.c	ft_atoi.c		\
 			ft_calloc.c		ft_strdup.c						\
-			ft_substr.c		ft_strjoin.c					\
+			ft_substr.c		ft_strjoin.c	ft_strtrim.c	\
 			ft_split.c		ft_itoa.c		ft_strmapi.c	\
 			ft_striteri.c 	ft_putchar_fd.c	ft_putstr_fd.c	\
 			ft_putendl_fd.c	ft_putnbr_fd.c
