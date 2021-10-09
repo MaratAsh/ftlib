@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 17:00:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/09 13:10:09 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 14:25:52 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,22 @@ static int	ft_pow(int num, int power)
 	return (res);
 }
 
-void ft_putnbr_fd(int n, int fd)
+static void	ft_next_num(int *n, int fd, int *curr_d, int *d)
+{
+	if (*n < 0)
+		*n = - (*n % ft_pow(10, *curr_d - 1));
+	else
+		*n = *n % ft_pow(10, *curr_d - 1);
+	*d = *curr_d;
+	*curr_d = ft_get_digits(*n);
+	while (*curr_d < *d - 1)
+	{
+		write(fd, "0", 1);
+		(*d)--;
+	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
 {
 	int		d;
 	int		curr_d;
@@ -48,26 +63,12 @@ void ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		c = '0' - n / ft_pow(10, curr_d - 1);
 		write(fd, &c, 1);
-		n = - (n % ft_pow(10, curr_d - 1));
-		curr_d = ft_get_digits(n);
-		while (curr_d < d - 1)
-		{
-			write(fd, "0", 1);
-			d--;
-		}
+		ft_next_num(&n, fd, &curr_d, &d);
 	}
 	while (curr_d > 1 || (n > 0))
 	{
 		c = '0' + n / ft_pow(10, curr_d - 1);
-		n = n % ft_pow(10, curr_d - 1);
 		write(fd, &c, 1);
-		d = curr_d;
-		curr_d = ft_get_digits(n);
-		while (curr_d < d - 1)
-		{
-			write(fd, "0", 1);
-			d--;
-		}
+		ft_next_num(&n, fd, &curr_d, &d);
 	}
-
 }
