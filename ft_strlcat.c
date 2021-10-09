@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:24:05 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/09 21:49:27 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 22:03:45 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ t_size	ft_strlcat(char *dst, const char *src, t_size sz)
 	if (sz_dst + i == sz && sz != 0)
 		i--;
 	dst[sz_dst + i] = 0;
-	return (sz_dst + i);
+	return (sz_dst + ft_strlen((char *) src));
 }
