@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 20:06:43 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/06 13:49:30 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/09 14:29:22 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static t_size	ft_strlen(char *s)
 	while (s[sz])
 		sz++;
 	return (sz);
-
 }
 
 char	*ft_strdup(const char *s1)
@@ -36,7 +35,6 @@ char	*ft_strdup(const char *s1)
 	str = (char *) malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 	{
-		// errno
 		return (str);
 	}
 	i = 0;
