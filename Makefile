@@ -6,7 +6,7 @@
 #    By: alcierra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2021/10/10 20:21:07 by alcierra         ###   ########.fr        #
+#    Updated: 2021/10/10 20:45:55 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,6 @@ fclean: clean
 
 re: fclean all
 
-norm:
-		norminette -R CheckForbiddenSourceHeader
-		norminette libft.h
 
 bonus:
 		@make OBJS="$(B_OBJS)" all
