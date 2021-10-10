@@ -6,28 +6,31 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 15:58:34 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/08 16:21:43 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 15:54:54 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-typedef unsigned long	t_size;
+static char	*ft_fizz(void)
+{
+	char	*str;
+
+	str = (char *) malloc(1);
+	if (str)
+		str[0] = 0;
+	return (str);
+}
 
 char	*ft_substr(char const *s, unsigned int start, t_size len)
 {
 	t_size	fact_len;
 	char	*str;
 	t_size	i;
-	
+
 	fact_len = ft_strlen((char *) s);
 	if (fact_len < start)
-	{
-		str = malloc(1);
-		if (str)
-			str[0] = 0;
-		return (str);
-	}
+		str = ft_fizz();
 	else
 	{
 		fact_len = fact_len - start + 1;
@@ -43,6 +46,6 @@ char	*ft_substr(char const *s, unsigned int start, t_size len)
 			i++;
 		}
 		str[i] = 0;
-		return (str);
 	}
+	return (str);
 }
