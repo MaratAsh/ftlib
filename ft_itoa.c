@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:51:51 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/09 14:10:32 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 21:22:59 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,22 @@ char	*ft_itoa(int n)
 	int		d;
 
 	d = ft_get_digits(n);
+	str = (char *) malloc(sizeof(char) * (d * 2));
+	if (str == NULL)
+		return (NULL);
 	if (n < 0)
 	{
-		str = (char *) malloc(sizeof(char) * (d + 2));
-		if (str == NULL)
-			return (NULL);
-		ft_fill(str + d, n);
+		if (n > -10)
+		{
+			str[0] = '-';
+			str[1] = '0' - n;
+		}
+		else
+			ft_fill(str + d, n);
 		str[d + 1] = 0;
 	}
 	else
 	{
-		str = (char *) malloc(sizeof(char) * (d + 1));
-		if (str == NULL)
-			return (NULL);
 		ft_fill(str + d - 1, n);
 		str[d] = 0;
 	}
