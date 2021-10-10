@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:22:04 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 13:32:43 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 16:18:41 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len1;
 	int		len2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len1 = ft_strlen((char *) s1);
 	len2 = ft_strlen((char *) s2);
 	str = (char *) malloc(sizeof(char) * (len1 + len2 + 1));
