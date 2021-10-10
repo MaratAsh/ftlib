@@ -6,7 +6,7 @@
 #    By: alcierra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2021/10/10 17:35:48 by alcierra         ###   ########.fr        #
+#    Updated: 2021/10/10 20:21:07 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	\
 			ft_striteri.c 	ft_putchar_fd.c	ft_putstr_fd.c	\
 			ft_putendl_fd.c	ft_putnbr_fd.c
 
-B_SRCS	=	ft_lstnew.c
+B_SRCS	=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c	\
+			ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
+			ft_lstclear.c	ft_lstiter.c		ft_lstmap.c
 
 OBJS	=	${SRCS:.c=.o}
 B_OBJS	=	${B_SRCS:.c=.o}
@@ -51,6 +53,6 @@ norm:
 		norminette libft.h
 
 bonus:
-		make OBJS="$(B_OBJS)" all
+		@make OBJS="$(B_OBJS)" all
 
 .PHONY: all clean fclean re	
