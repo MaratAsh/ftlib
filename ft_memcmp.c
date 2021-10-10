@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 17:38:54 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 16:05:20 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 16:20:13 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ typedef unsigned long	t_size;
 
 int	ft_memcmp(const void *s1, const void *s2, t_size n)
 {
-	t_size	i;
+	t_size			i;
 	unsigned char	*s1_;
 	unsigned char	*s2_;
 
