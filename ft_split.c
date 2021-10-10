@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:50:34 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 13:16:27 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 20:43:22 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr_str;
 
+	if (!s)
+		return (NULL);
 	arr_str = (char **) malloc(sizeof(char *) * (ft_splited_cnt(s, c) + 1));
 	if (arr_str == (char **) 0)
 		return (NULL);
