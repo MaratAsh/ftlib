@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 15:58:34 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 15:54:54 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 20:40:35 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ char	*ft_substr(char const *s, unsigned int start, t_size len)
 {
 	t_size	fact_len;
 	char	*str;
-	t_size	i;
 
+	if (!s)
+		return (NULL);
 	fact_len = ft_strlen((char *) s);
 	if (fact_len < start)
 		str = ft_fizz();
@@ -39,13 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, t_size len)
 		str = (char *) malloc(sizeof(char) * (fact_len + 1));
 		if (str == (char *) 0)
 			return (NULL);
-		i = 0;
-		while (i < fact_len)
-		{
-			str[i] = s[i + start];
-			i++;
-		}
-		str[i] = 0;
+		ft_strlcpy(str, s + start, fact_len + 1);
 	}
 	return (str);
 }
