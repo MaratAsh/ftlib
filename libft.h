@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:00:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/09 14:36:06 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 15:56:03 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,13 @@ int		ft_strncmp(const char *s1, const char *s2, t_size n);
 void	*ft_memchr(const char *s, int c, t_size n);
 char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 int		ft_atoi(const char *str);
-
 void	*ft_calloc(size_t count, t_size size);
 char	*ft_strdup(const char *s1);
-
-char	*ft_substr(char const *s, unsigned int start,size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-
 char	*ft_strtrim(char const *s1, char const *set);
-
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
