@@ -6,15 +6,21 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:55:02 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/06 13:22:50 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/10 21:42:07 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
 	int		i;
+	int		len;
 
+	len = ft_strlen((char *) s);
+	if (c == 0)
+		return ((char *) s + len);
 	ptr = (void *) 0;
 	i = 0;
 	while (s[i])
