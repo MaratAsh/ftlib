@@ -6,7 +6,7 @@
 #    By: alcierra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2021/10/09 19:50:55 by alcierra         ###   ########.fr        #
+#    Updated: 2021/10/10 17:35:48 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	\
 			ft_striteri.c 	ft_putchar_fd.c	ft_putstr_fd.c	\
 			ft_putendl_fd.c	ft_putnbr_fd.c
 
+B_SRCS	=	ft_lstnew.c
+
 OBJS	=	${SRCS:.c=.o}
+B_OBJS	=	${B_SRCS:.c=.o}
 FLAGS	=	-Wall -Wextra -Werror
 
 all: $(NAME)
@@ -33,7 +36,7 @@ $(NAME): ${OBJS}
 		ar rcs $(NAME) $?
 
 clean:
-		rm -rf ${OBJS}
+		rm -rf ${OBJS} ${B_OBJS}
 
 fclean: clean
 		rm -rf ${NAME}
@@ -43,11 +46,11 @@ fclean: clean
 
 re: fclean all
 
-main:
-		gcc ${FLAGS} main.c
-
 norm:
 		norminette -R CheckForbiddenSourceHeader
 		norminette libft.h
+
+bonus:
+		make OBJS="$(B_OBJS)" all
 
 .PHONY: all clean fclean re	
