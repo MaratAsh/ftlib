@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:53:27 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/06 18:13:18 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/12 12:44:24 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, t_size len)
 
 	temp_dst = (char *) dst;
 	temp_src = (char *) src;
-	 if (dst == (void *) 0 && src == (void *) 0)
+	if (dst == (void *) 0 && src == (void *) 0)
 		return (dst);
 	if (dst < src)
 	{
