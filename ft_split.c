@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:50:34 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 20:43:22 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/12 10:24:08 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	ft_split_part(char const *s, char c, char **arr_str)
 			return (ft_split_free(arr_str, word_cnt));
 		ft_strlcpy(arr_str[word_cnt], s + dsp, word_len + 1);
 		dsp += word_len;
-		while (*(s + dsp) == c)
+		while (*(s + dsp) == c && c != 0)
 			++dsp;
 		++word_cnt;
 	}
