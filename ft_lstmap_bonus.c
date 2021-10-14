@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 19:00:55 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/14 08:11:54 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:13:24 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	start = NULL;
 	elem = NULL;
-	if (!lst)
-		return (NULL);
 	while (lst)
 	{
 		if (elem)
