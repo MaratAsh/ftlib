@@ -6,7 +6,7 @@
 /*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 16:51:51 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/14 08:53:36 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/10/14 21:11:59 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 static int	ft_get_digits(int num)
 {
-	if (num < 0)
-		return (1 + ft_get_digits(-(num / 10)));
-	else
+	int	i;
+
+	i = 0;
+	if (num == 0)
+		return (1);
+	while (num)
 	{
-		if (num / 10 == 0)
-			return (1);
-		return (1 + ft_get_digits(num / 10));
+		num /= 10;
+		i++;
 	}
+	return (i);
 }
 
 static void	ft_fill(char *str, int num)
@@ -42,7 +45,7 @@ char	*ft_itoa(int n)
 	int		d;
 
 	d = ft_get_digits(n);
-	str = (char *) malloc(sizeof(char) * (d + 2));
+	str = (char *) malloc(sizeof(char) * (d + (n < 0) + 1));
 	if (str == NULL)
 		return (NULL);
 	if (n < 0)

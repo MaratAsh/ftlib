@@ -6,7 +6,7 @@
 #    By: alcierra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2021/10/12 12:41:07 by alcierra         ###   ########.fr        #
+#    Updated: 2021/10/14 21:03:07 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ FLAGS	=	-Wall -Wextra -Werror
 
 all: $(NAME)
 		
-$(NAME): ${OBJS} ${HEAD}
+$(NAME): ${OBJS} ${HEADER}
 		ar rcs $(NAME) $?
 
 clean:
@@ -44,7 +44,7 @@ clean:
 fclean: clean
 		rm -rf ${NAME}
 
-%.o : %.c ${HEAD}
+%.o : %.c ${HEADER}
 		gcc ${FLAGS} -c $< -o $@
 
 re: fclean all
