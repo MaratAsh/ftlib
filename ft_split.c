@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static t_size	ft_size_part(char *s, char c)
+static size_t	ft_size_part(char *s, char c)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != 0 && s[i] != c)
@@ -46,7 +46,7 @@ static int	ft_splited_cnt(char const *s, char c)
 	return (count);
 }
 
-static int	ft_split_free(char **arr_str, t_size word_cnt)
+static int	ft_split_free(char **arr_str, size_t word_cnt)
 {
 	while (word_cnt--)
 		free(arr_str[word_cnt]);
@@ -56,9 +56,9 @@ static int	ft_split_free(char **arr_str, t_size word_cnt)
 
 static int	ft_split_part(char const *s, char c, char **arr_str)
 {
-	t_size	word_len;
-	t_size	dsp;
-	t_size	word_cnt;
+	size_t	word_len;
+	size_t	dsp;
+	size_t	word_cnt;
 
 	dsp = 0;
 	word_cnt = 0;

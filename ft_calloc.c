@@ -12,9 +12,7 @@
 
 #include "libft.h"
 
-typedef unsigned long	t_size;
-
-void	*ft_calloc(t_size count, t_size size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*arr;
 

@@ -12,26 +12,16 @@
 
 #include "libft.h"
 
-static char	*ft_fizz(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-
-	str = (char *) malloc(1);
-	if (str)
-		str[0] = 0;
-	return (str);
-}
-
-char	*ft_substr(char const *s, unsigned int start, t_size len)
-{
-	t_size	fact_len;
+	size_t	fact_len;
 	char	*str;
 
 	if (!s)
 		return (NULL);
 	fact_len = ft_strlen((char *) s);
 	if (fact_len < start)
-		str = ft_fizz();
+		str = ft_calloc(1, 1);
 	else
 	{
 		fact_len = fact_len - start + 1;
