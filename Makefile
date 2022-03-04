@@ -6,12 +6,16 @@
 #    By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/06 12:53:24 by alcierra          #+#    #+#              #
-#    Updated: 2022/01/18 20:08:32 by alcierra         ###   ########.fr        #
+#    Updated: 2022/03/04 17:51:00 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 HEADER	=	libft.h
+
+FLDR_S	=	srcs/
+FLDR_O	=	objs/
+
 SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c	\
 			ft_isascii.c	ft_isprint.c	ft_strlen.c		\
 			ft_memset.c		ft_bzero.c		ft_memcpy.c		\
@@ -36,26 +40,35 @@ B_SRCS	=	ft_lstnew_bonus.c		ft_lstadd_front_bonus.c		ft_lstsize_bonus.c		\
 
 OBJS	=	${SRCS:.c=.o}
 B_OBJS	=	${B_SRCS:.c=.o}
+
+SRCS_WD	=	$(addprefix ${FLDR_S},${SRCS})
+SRCS_B_WD	=	$(addprefix ${FLDR_S},${B_SRCS})
+OBJS_WD	=	$(addprefix ${FLDR_O},${OBJS})
+OBJS_B_WD	=	$(addprefix ${FLDR_O},${B_OBJS})
+
 FLAGS	=	-Wall -Wextra -Werror
 
-all: $(NAME)
-		
-$(NAME): ${OBJS} ${HEADER}
+all: $(FLDR_O) $(NAME)
+
+$(FLDR_O):
+		echo $(SRCS_WD)
+		mkdir $(FLDR_O)
+
+$(NAME): ${OBJS_WD} ${HEADER}
 		ar rcs $(NAME) $?
 
 clean:
-		rm -rf ${OBJS} ${B_OBJS}
+		rm -rf ${OBJS_WD} ${OBJS_B_WD}
 
 fclean: clean
 		rm -rf ${NAME}
 
-%.o : %.c ${HEADER}
+${FLDR_O}%.o : ${FLDR_S}%.c ${HEADER}
 		gcc ${FLAGS} -c $< -o $@
 
 re: fclean all
 
-
 bonus:
-		@make OBJS="$(B_OBJS)" all
+		@make OBJS_WD="$(OBJS_B_WD)" all
 
 .PHONY: all clean fclean re	bonus

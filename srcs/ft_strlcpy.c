@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alcierra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 16:55:02 by alcierra          #+#    #+#             */
-/*   Updated: 2021/10/10 21:42:07 by alcierra         ###   ########.fr       */
+/*   Created: 2021/10/05 16:04:22 by alcierra          #+#    #+#             */
+/*   Updated: 2022/03/04 17:58:41 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char	*ptr;
-	int		i;
-	int		len;
+	size_t	i;
 
-	len = ft_strlen((char *) s);
-	if (c == 0)
-		return ((char *) s + len);
-	ptr = (void *) 0;
 	i = 0;
-	while (s[i])
+	if (size == 0)
+		return (ft_strlen((char *) src));
+	while (src[i])
 	{
-		if (s[i] == c)
-			ptr = (char *) s + i;
+		if (i == size - 1)
+			break ;
+		dst[i] = src[i];
 		i++;
 	}
-	return (ptr);
+	dst[i] = 0;
+	return (ft_strlen((char *) src));
 }
