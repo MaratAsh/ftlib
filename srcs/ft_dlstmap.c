@@ -6,13 +6,13 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:10:52 by alcierra          #+#    #+#             */
-/*   Updated: 2022/01/18 20:29:09 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/02/02 21:57:12 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *))
+t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *))
 {
 	t_dlist	*start;
 	t_dlist	*curr;
@@ -27,7 +27,9 @@ t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *))
 	while (dlst)
 	{
 		if (curr)
+		{
 			curr->next = ft_dlstnew(f(dlst->content));
+		}
 		else
 			break ;
 		if (curr && curr->next)
