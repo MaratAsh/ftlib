@@ -6,11 +6,11 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 20:10:52 by alcierra          #+#    #+#             */
-/*   Updated: 2022/02/02 21:57:12 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:40:58 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *))
 {

@@ -6,11 +6,11 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 19:59:33 by alcierra          #+#    #+#             */
-/*   Updated: 2022/01/18 20:04:46 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:41:16 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_dlstclear(t_dlist **dlst, void (*del)(void*))
 {

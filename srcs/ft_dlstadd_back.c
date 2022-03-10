@@ -6,11 +6,11 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:44:47 by alcierra          #+#    #+#             */
-/*   Updated: 2022/01/18 18:57:58 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:41:07 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_dlstadd_back(t_dlist **dlst, t_dlist *new_elem)
 {

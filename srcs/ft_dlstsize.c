@@ -6,11 +6,11 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 18:29:48 by alcierra          #+#    #+#             */
-/*   Updated: 2022/01/18 18:32:08 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:41:50 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 size_t	ft_dlstsize(t_dlist *dlst)
 {
