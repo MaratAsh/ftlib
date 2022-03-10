@@ -6,11 +6,11 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:42:29 by alcierra          #+#    #+#             */
-/*   Updated: 2022/01/18 18:24:44 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:42:05 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
