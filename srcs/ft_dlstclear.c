@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 19:59:33 by alcierra          #+#    #+#             */
-/*   Updated: 2022/03/10 19:41:16 by alcierra         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:52:40 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_dlstclear(t_dlist **dlst, void (*del)(void*))
 	while (start)
 	{
 		start = start->next;
-		del(start->prev->content);
+		if (del)
+			del(start->prev->content);
 		free(start->prev);
 	}
 	*dlst = NULL;
