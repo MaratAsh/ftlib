@@ -13,6 +13,8 @@
 #include "../libft.h"
 #include <unistd.h>
 
+#include "../libft.h"
+
 static size_t	ft_size_part(char *s, char c)
 {
 	size_t	i;
@@ -67,17 +69,14 @@ static int	ft_split_inline_part(char *s, char c, char **arr_str)
 	while (dsp < count)
 	{
 		while (s[dsp] == c && c)
-		{
-			s[dsp] = 0;
 			dsp++;
-		}
 		if (!s[dsp])
-			break;
+			break ;
 		word_len = ft_size_part((char *) s + dsp, c);
 		arr_str[word_cnt] = s + dsp;
 		if (arr_str[word_cnt] == NULL)
 			return (ft_split_inline_free(arr_str));
-		ft_strlcpy(arr_str[word_cnt], s + dsp, word_len + 1);
+		s[dsp + word_len] = 0;
 		dsp += word_len + 1;
 		++word_cnt;
 	}
