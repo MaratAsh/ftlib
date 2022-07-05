@@ -28,6 +28,12 @@ typedef struct s_dlist
 	struct s_dlist	*prev;
 }						t_dlist;
 
+typedef struct s_string
+{
+	char	*str;
+	size_t	length;
+}			t_string;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -86,5 +92,7 @@ void	ft_dlstdelone(t_dlist *dlst, void (*del)(void*));
 void	ft_dlstclear(t_dlist **dlst, void (*del)(void*));
 void	ft_dlstiter(t_dlist *dlst, void (*f)(void *));
 t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
+
+void	string_init(t_string *str, char *ptr);
 
 #endif
