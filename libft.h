@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -94,5 +95,6 @@ void	ft_dlstiter(t_dlist *dlst, void (*f)(void *));
 t_dlist	*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));
 
 void	string_init(t_string *str, char *ptr);
+void	string_put_fd(t_string *str, int fd);
 
 #endif
